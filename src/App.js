@@ -55,7 +55,7 @@ function Home() {
 .then(function(res){ return res.json(); })
 .then(function(data){ alert( JSON.stringify( data ) ) })
   },[]);
-  return <h2>Home</h2>;
+  return <h2>Main</h2>;
 }
 
 function About() {

@@ -48,9 +48,13 @@ function Home() {
 {
     method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept':'*/*'
     },
-    body: {"password": "superadmin","userName": "olalekan.oloba@gmail.com"}
+    body: JSON.stringify({
+      password: 'superadmin',
+      userName: 'olalekan.oloba@gmail.com'
+    })
 })
 .then(function(res){ return res.json(); })
 .then(function(data){ alert( JSON.stringify( data ) ) })

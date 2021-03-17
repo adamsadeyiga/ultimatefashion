@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,52 +13,52 @@ import {
 function App() {
   return (
     <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/topics">Topics</Link>
-        </li>
-      </ul>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
 
-      <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/topics">
-          <Topics />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </div>
-  </Router>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/topics">
+            <Topics />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
 function Home() {
   useEffect(() => {
-    fetch("http://ultimatefashion-env.eba-3w3pe4eb.us-west-2.elasticbeanstalk.com/admin/login",
-{
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept':'*/*'
-    },
-    body: JSON.stringify({
-      password: 'superadmin',
-      userName: 'olalekan.oloba@gmail.com'
-    })
-})
-.then(function(res){ return res.json(); })
-.then(function(data){ alert( JSON.stringify( data ) ) })
-  },[]);
+    fetch("https://ultimatefashion-env.eba-3w3pe4eb.us-west-2.elasticbeanstalk.com/admin/login",
+      {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': '*/*'
+        },
+        body: JSON.stringify({
+          password: 'superadmin',
+          userName: 'olalekan.oloba@gmail.com'
+        })
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) { alert(JSON.stringify(data)) })
+  }, []);
   return <h2>Main</h2>;
 }
 

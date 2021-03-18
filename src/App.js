@@ -44,7 +44,7 @@ function App() {
 
 function Home() {
   useEffect(() => {
-    fetch("https://ultimatefashion-env.eba-3w3pe4eb.us-west-2.elasticbeanstalk.com/admin/login",
+    fetch("https://ultimatefashion.omegalambda-ng.com/admin/login",
       {
         method: "POST",
         headers: {
